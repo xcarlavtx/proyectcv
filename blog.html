@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Blog Personal</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffbf3;
+            text-align: center;
+            color: #333;
+            overflow: hidden;
+        }
+        header, footer {
+            background-color: #f8b195;
+            color: white;
+            padding: 1em 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: #ffecd2;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: relative;
+            z-index: 10;
+        }
+        .container img {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border: 2px solid #f67280;
+            border-radius: 10px;
+        }
+        .description {
+            margin: 20px 0;
+            text-align: left;
+            line-height: 2em;
+            font-size: 1.2em;
+        }
+        .line {
+            display: block;
+            width: 100%;
+            border-bottom: 2px dashed #f8b195;
+            margin-bottom: 10px;
+        }
+        .floating {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+            animation: float 5s linear infinite;
+            z-index: 1;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            100% {
+                transform: translateY(-100vh) translateX(calc(100vw - 20px));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Estudiante Carla Vásquez</h1>
+    </header>
+    <div class="container">
+        <img src="pf.jpeg" alt="Imagen superior">
+        <div class="description">
+            <span class="line"> Carla Vásquez, una estudiante entusiasta con una pasión por el desarrollo web</span>
+            <span class="line">una experta en HTML, CSS y JavaScript.</span>
+            <span class="line">Su fascinación por la tecnología se extiende a la realidad aumentada, donde también tiene sólidos conocimientos.</span>
+            <span class="line">Su experiencia en Diseño Web 1 le ha proporcionado una base sólida para crear sitios web sorprendentes y funcionales</span>
+            <span class="line">se destaca por su creatividad y su capacidad para aplicar conceptos de diseño de manera efectiva en sus proyectos.</span>
+        </div>
+    </div>
+    <script>
+        function createFloatingElement(type) {
+            const element = document.createElement('div');
+            element.classList.add('floating');
+            if (type === 'flower') {
+                element.innerHTML = '🌸';
+            } else {
+                element.innerHTML = '❤️';
+            }
+            element.style.left = Math.random() * 100 + 'vw';
+            element.style.animationDuration = Math.random() * 5 + 3 + 's';
+            element.style.fontSize = Math.random() * 10 + 10 + 'px';
+            document.body.appendChild(element);
+
+            element.addEventListener('animationend', () => {
+                element.remove();
+                createFloatingElement(type);
+            });
+        }
+
+        for (let i = 0; i < 30; i++) {
+            createFloatingElement(i % 2 === 0 ? 'flower' : 'heart');
+        }
+    </script>
+</body>
+</html>

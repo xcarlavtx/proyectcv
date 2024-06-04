@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Web I/Proyect</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            animation: fadeIn 1s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        header {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        #showcase {
+            margin-top: 20px;
+            text-align: center;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        #showcase img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        #showcase h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .services {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .service {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            margin: 10px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        .service:hover {
+            transform: scale(1.05);
+        }
+        .service img {
+            width: 100%;
+            max-width: 150px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+        }
+        .service h3 {
+            color: #ff69b4;
+        }
+        .contact-form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #e60073;
+        }
+        #social {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #social h2 {
+            color: #333;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .social-links a {
+            text-decoration: none;
+            color: #ff69b4;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #e60073;
+        }
+        .social-links img {
+            width: 40px;
+            height: 40px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+        }
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+            .service {
+                width: 80%;
+            }
+        }
+        .profile-picture {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            cursor: pointer;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .profile-picture img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .profile-picture img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        function openPersonalPage() {
+            window.open("blog.html", "_blank", "width=600,height=400");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Equipo de Community Manager CV</h1>
+            <nav>
+                <ul>
+                    <li><a href="#showcase">Inicio</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#social">Redes Sociales</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="profile-picture" onclick="openPersonalPage()">
+        <img src="pf.jpeg" alt="Foto de perfil">
+    </div>
+    <section id="showcase">
+        <div class="container">
+            <img src="im.jpeg" alt="Community Manager Team">
+            <h1>¡Hola! Somos el increíble equipo de Community Manager CV</h1>
+            <p>Ellos han hecho un trabajo fantástico gestionando nuestras redes sociales y mejorando la presencia en línea.</p>
+        </div>
+    </section>
+    <section id="services" class="container">
+        <h2>Servicios que ofrecemos</h2>
+        <div class="services">
+            <div class="service">
+                <img src="1.jpeg" alt="Gestión de Redes Sociales">
+                <h3>Gestión de Redes Sociales</h3>
+                <p>Manejamos tus cuentas de redes sociales para que puedas concentrarte en lo que haces mejor.</p>
+            </div>
+            <div class="service">
+                <img src="2.jpeg" alt="Creación de Contenido">
+                <h3>Creación de Contenido</h3>
+                <p>Desarrollamos contenido atractivo y relevante para tus seguidores.</p>
+            </div>
+            <div class="service">
+                <img src="3.jpeg" alt="Analítica y Reportes">
+                <h3>Analítica y Reportes</h3>
+                <p>Proveemos informes detallados sobre el rendimiento de tus redes sociales.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="container">
+        <h2>Contacto</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <label for="name">Nombre:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Mensaje:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="formResponse" style="display:none;"></p>
+        </div>
+    </section>
+<section id="social">
+    <div class="container">
+        <h2>Encuéntranos en Redes Sociales</h2>
+        <div class="social-links">
+            <a href="https://www.instagram.com/xcarlavastx?igsh=ODU4b2dvMXZzcjR4" target="_blank">
+                <img src="ig.jpeg" alt="Instagram">
+            </a>
+            <a href="https://wa.me/qr/P7MAM7NPNMLKK1" target="_blank">
+                <img src="wpp.jpeg" alt="WhatsApp">
+            </a>
+            <a href="https://www.facebook.com/carlapatricia.vasqueztellez?mibextid=ZbWKwL" target="_blank">
+                <img src="fb.jpeg" alt="Facebook">
+            </a>
+            <a href="https://www.tiktok.com/@carlav.xd?_t=8muFWlq2WVq&_r=1" target="_blank">
+                <img src="tt.jpeg" alt="TikTok">
+            </a>
+        </div>
+    </div>
+</section>
